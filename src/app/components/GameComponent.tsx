@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { useState } from 'react';
 
@@ -25,13 +25,13 @@ export default function GameComponent({ title, description, gameUrl }: GameProps
           src={iframeSrc}
           width="100%"
           height="400px"
-          frameBorder="0"
-          allowFullScreen>
-        </iframe>
-        <button onClick={refreshGame} className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          allowFullScreen
+          title="playable"
+        />
+        <button type="button" onClick={refreshGame} className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
           Play Again
         </button>
       </div>
     </div>
   );
-};
+}

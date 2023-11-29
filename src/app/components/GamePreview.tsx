@@ -13,9 +13,9 @@ export default function GamePreview({ gameId, title, previewImageUrl }: GamePrev
       <Link href={`/games/${gameId}`}>
         <img className="w-full" src={previewImageUrl} alt={title} />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2 text-white">{"Play"}</div>
+          <div className="font-bold text-xl mb-2 text-white">Play</div>
         </div>
       </Link>
     </div>
   );
-};
+}

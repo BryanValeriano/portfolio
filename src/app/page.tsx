@@ -1,4 +1,4 @@
-import GamePreview from './components/GamePreview'
+import GamePreview from './components/GamePreview';
 
 export default function Home() {
   return (
@@ -9,5 +9,5 @@ export default function Home() {
         previewImageUrl="/previewImages/monstersPuzzleEscape.png"
       />
     </main>
-  )
+  );
 }

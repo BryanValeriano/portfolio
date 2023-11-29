@@ -1,6 +1,6 @@
-import path from "node:path";
-import { GameDetail, IGamesDetailsRepository } from "../IGamesDetailsRepository";
-import fs from 'node:fs/promises'
+import path from 'node:path';
+import fs from 'node:fs/promises';
+import { GameDetail, IGamesDetailsRepository } from '../IGamesDetailsRepository';
 
 const databasePath = path.join(__dirname, './gamesDetails.json');
 
@@ -8,15 +8,15 @@ export class GamesDetailsRepositoryJSON implements IGamesDetailsRepository {
   private gameDetails: GameDetail[] = [];
 
   constructor() {
-    fs.readFile(databasePath).then(data => {
+    fs.readFile(databasePath).then((data) => {
       this.gameDetails = JSON.parse(data.toString());
     }).catch(() => {
-      this.persist();
-    })
+      await this.persist();
+    });
   }
 
-  private persist() {
-    fs.writeFile(databasePath, JSON.stringify(this.gameDetails));
+  private async persist() {
+    await fs.writeFile(databasePath, JSON.stringify(this.gameDetails));
   }
 
   public getAll(): GameDetail[] {
