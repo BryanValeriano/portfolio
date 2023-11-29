@@ -1,29 +1,34 @@
-import path from 'node:path';
-import fs from 'node:fs/promises';
+import fs from 'node:fs';
 import { GameDetail, IGamesDetailsRepository } from '../IGamesDetailsRepository';
+import path from 'node:path';
 
-const databasePath = path.join(__dirname, './gamesDetails.json');
 
 export class GamesDetailsRepositoryJSON implements IGamesDetailsRepository {
-  private gameDetails: GameDetail[] = [];
+  private filename = 'gamesDetails.json';
 
-  constructor() {
-    fs.readFile(databasePath).then((data) => {
-      this.gameDetails = JSON.parse(data.toString());
-    }).catch(() => {
-      await this.persist();
-    });
+  private getGamesDetailsFromFile() {
+    const gamesDetails: GameDetail[] = JSON.parse(
+      fs.readFileSync(
+        path.join(
+          'src',
+          'server',
+          'repositories',
+          'json',
+          this.filename
+        ),
+        'utf8'
+      )
+    );
+    return gamesDetails;
   }
 
-  private async persist() {
-    await fs.writeFile(databasePath, JSON.stringify(this.gameDetails));
-  }
 
   public getAll(): GameDetail[] {
-    return this.gameDetails;
+    return [...this.getGamesDetailsFromFile()];
   }
 
   getById(id: string): GameDetail | null {
-    return this.gameDetails.find((gameDetail) => gameDetail.id == id) ?? null;
+    const gameDetails = this.getGamesDetailsFromFile();
+    return gameDetails.find((gameDetail) => gameDetail.id == id) ?? null;
   }
 }
