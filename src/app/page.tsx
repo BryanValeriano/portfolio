@@ -1,3 +1,4 @@
+import { GameDetail } from '@/server/repositories/IGamesDetailsRepository';
 import GamePreview from './components/GamePreview';
 
 async function getData() {
@@ -16,15 +17,18 @@ async function getData() {
 
 export default async function Home() {
   const data = await getData();
-  console.log(data);
+  const gamesDetails: GameDetail[] = data.gamesDetails;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <GamePreview
-        gameId="teste"
-        title="My Game"
-        previewImageUrl="/previewImages/monstersPuzzleEscape.png"
-      />
+      {gamesDetails.map((game) => (
+        <GamePreview
+          key={game.id}
+          gameId={game.id}
+          title={game.title}
+          previewImageUrl={game.previewImageUrl}
+        />
+      ))}
     </main>
   );
 }
