@@ -1,13 +1,12 @@
 import { container } from '@/server/container';
 import GetGameDetailByIdService from '@/server/useCases/getGameDetailById/getGameDetailByIdService';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
-  request: Request,
-  { params }: { params: { id: string } },
+  req: NextRequest,
 ) {
   try {
-    const gameId = params.id;
+    const gameId = req.nextUrl.searchParams.get('id');
     if (typeof gameId !== 'string') {
       return NextResponse.json({ success: false, error: 'Invalid Game ID format' }, { status: 400 });
     }

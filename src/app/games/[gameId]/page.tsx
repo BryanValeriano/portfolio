@@ -3,7 +3,7 @@ import GameComponent from '@/app/components/GameComponent';
 
 async function getData(gameId: string) {
   console.log(gameId);
-  const res = await fetch(process.env.NEXT_PUBLIC_URL + `/api/game/${gameId}`, {
+  const res = await fetch(process.env.NEXT_PUBLIC_URL + `/api/game/search?id=${gameId}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
