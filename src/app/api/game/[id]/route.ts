@@ -7,18 +7,19 @@ export async function GET(
 ) {
   try {
     const gameId = req.nextUrl.searchParams.get('id');
+
     if (typeof gameId !== 'string') {
       return NextResponse.json({ success: false, error: 'Invalid Game ID format' }, { status: 400 });
     }
 
     const { gamesDetailsRepository } = container();
     const getGameDetailByIdService = new GetGameDetailByIdService({ gamesDetailsRepository });
-    const gameDetail = await getGameDetailByIdService.execute(gameId);
+    const gameDetails = await getGameDetailByIdService.execute(gameId);
 
-    if (!gameDetail) {
+    if (!gameDetails) {
       return NextResponse.json({ success: false, error: 'Game Not Found' }, { status: 404 });
     }
-    return NextResponse.json({ success: true, gameDetail }, { status: 200 });
+    return NextResponse.json({ success: true, gameDetails }, { status: 200 });
 
   } catch (error) {
     console.error(error);

@@ -18,17 +18,7 @@ async function getData(gameId: string) {
 
 export default async function GamePage({ params }: { params: { gameId: string } }) {
   const { gameId } = params;
-  const data = await getData(gameId);
-  console.log(data);
-
-  // fetch from api
-  const gameDetails = {
-    id: gameId,
-    title: 'Monsters Puzzle',
-    description: 'Awesome game',
-    gameUrl: '/gameFiles/monstersPuzzleEscape.html',
-    previewImageUrl: '/previewImages/monstersPuzzleEscape.png',
-  };
+  const { gameDetails } = await getData(gameId);
 
   return (
     <div>
