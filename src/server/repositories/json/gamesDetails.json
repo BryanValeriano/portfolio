@@ -5,5 +5,12 @@
     "description": "Awesome game",
     "gameUrl": "/gameFiles/monstersPuzzleEscape.html",
     "previewImageUrl": "/previewImages/monstersPuzzleEscape.png"
+  },
+  {
+    "id": "2",
+    "title": "Midas Merge Fishdom",
+    "description": "Awesome game",
+    "gameUrl": "/gameFiles/gildFishdom.html",
+    "previewImageUrl": "/previewImages/gildFishdom.png"
   }
 ]
