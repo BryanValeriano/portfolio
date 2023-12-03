@@ -19,5 +19,12 @@
     "description": "Awesome game",
     "gameUrl": "/gameFiles/swPouso.html",
     "previewImageUrl": "/previewImages/swPouso.png"
+  },
+  {
+    "id": "4",
+    "title": "Zooba Grenade Wars",
+    "description": "Awesome game",
+    "gameUrl": "/gameFiles/zoobaGrenade.html",
+    "previewImageUrl": "/previewImages/zoobaGrenade.png"
   }
 ]
