@@ -12,5 +12,12 @@
     "description": "Awesome game",
     "gameUrl": "/gameFiles/gildFishdom.html",
     "previewImageUrl": "/previewImages/gildFishdom.png"
+  },
+  {
+    "id": "3",
+    "title": "Sky Warriors Landing",
+    "description": "Awesome game",
+    "gameUrl": "/gameFiles/swPouso.html",
+    "previewImageUrl": "/previewImages/swPouso.png"
   }
 ]
