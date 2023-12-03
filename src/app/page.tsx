@@ -20,12 +20,13 @@ export default async function Home() {
   const gamesDetails: GameDetail[] = data.gamesDetails;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4 gap-2">
       {gamesDetails.map((game) => (
         <GamePreview
           key={game.id}
           gameId={game.id}
           title={game.title}
+          description={game.description}
           previewImageUrl={game.previewImageUrl}
         />
       ))}
