@@ -1,6 +1,7 @@
 import SkillSetBlock from './SkillSetBlock';
 import React from 'react';
-import { faGamepad, faDatabase, faGlobe, faUserTie, faLaptopCode, faMugHot } from '@fortawesome/free-solid-svg-icons';
+import { faGamepad, faDatabase, faGlobe, faLaptopCode, faMugHot } from '@fortawesome/free-solid-svg-icons';
+import { faLinux } from '@fortawesome/free-brands-svg-icons';
 
 // Tailwind CSS styles
 const styles = {
@@ -18,7 +19,7 @@ export default function SkillSets() {
         <SkillSetBlock title="Back-end Development" icon={faDatabase} />
         <SkillSetBlock title="Game Developemt" icon={faGamepad} />
         <SkillSetBlock title="Web Development" icon={faGlobe} />
-        <SkillSetBlock title="Freelancing" icon={faUserTie} />
+        <SkillSetBlock title="Linux" icon={faLinux} />
         <SkillSetBlock title="Coffeholic" icon={faMugHot} />
       </div>
     </div>
