@@ -21,7 +21,7 @@ export default async function Home() {
   const gamesDetails: GameDetail[] = data.gamesDetails;
 
   return (
-    <>
+    <main className="bg-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-4 gap-2">
         {gamesDetails.map((game) => (
           <GamePreview
@@ -33,9 +33,9 @@ export default async function Home() {
           />
         ))}
       </div>
-      <div className="bg-gray-800 text-white min-h-screen p-10">
+      <div className="text-white min-h-screen p-10">
         <SkillSets />
       </div>
-    </>
+    </main>
   );
 }
