@@ -24,7 +24,7 @@ export default function SkillSetBlock({ title, icon }: SkillSetBlockProps) {
         style={{ fontSize: '45px', width: '45px', height: '45px' }}
       />
       <h3 className={styles.cardTitle}>{title}</h3>
-      <p className={styles.cardText}>A It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+      <p className={styles.cardText}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
     </div>
   );
 }
